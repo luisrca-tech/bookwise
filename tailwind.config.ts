@@ -1,13 +1,16 @@
 import { type Config } from "tailwindcss";
-import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        nunito: ['var(--font-nunito)']
       },
+      screens: {
+        '2xl': '87.5rem',
+        '3xl': '100rem',
+      }
     },
   },
   plugins: [],
