@@ -6,7 +6,7 @@ export default async function Home() {
     <HydrateClient>
       <main>
         <h1 className="text-green-200">Bookwise</h1>
-        <h1 className="text-green-200/50">Bookwise</h1>
+        <h1 className="text-green-200/50 px-">Bookwise</h1>
       </main>
     </HydrateClient>
   );
