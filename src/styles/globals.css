@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+  --white: 255 255 255;
+  --black: 0 0 0;
+
+  --green-100: 80 178 192;
+  --green-200: 37 93 106;
+  --green-300: 10 49 60;
+
+  --purple-100: 131 129 217;
+  --purple-200: 42 40 121;
+
+  --gray-100: 248 249 252;
+  --gray-200: 230 232 242;
+  --gray-300: 209 214 228;
+  --gray-400: 141 149 175;
+  --gray-500: 48 63 115;
+  --gray-600: 37 45 74;
+  --gray-700: 24 28 42;
+  --gray-800: 14 17 22;
+}
