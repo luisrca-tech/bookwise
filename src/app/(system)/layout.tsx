@@ -5,6 +5,7 @@ import { type Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { nunito } from "~/assets/fonts/nunito";
 import { TRPCReactProvider } from "~/trpc/react";
+import { auth } from "@clerk/nextjs/server";
 
 export const metadata: Metadata = {
   title: "Bookwise",
@@ -16,6 +17,11 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  auth().protect({
+    unauthenticatedUrl: "/login",
+    unauthorizedUrl: "/",
+  })
+
   return (
     <html lang="en" className={`${nunito.variable}`}>
       <ClerkProvider>
