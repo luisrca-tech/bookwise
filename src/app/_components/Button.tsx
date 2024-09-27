@@ -7,9 +7,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
 }
 
-export function Button({ icon, alt, children }: ButtonProps) {
+export function Button({ icon, alt, children, ...rest }: ButtonProps) {
   return (
-    <button className="flex items-center gap-5 rounded-lg bg-gray-600 px-6 py-5">
+    <button
+      className="flex items-center gap-5 rounded-lg bg-gray-600 px-6 py-5"
+      {...rest}
+    >
       <Image src={icon} alt={alt} />
       <span className="text-lg text-gray-200">{children}</span>
     </button>
