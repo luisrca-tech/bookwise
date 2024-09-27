@@ -1,11 +1,37 @@
+"use client";
+
+import { useSignIn } from "@clerk/nextjs";
 import Image from "next/image";
-import { Button } from "../_components/Button";
+import { Button } from "../../_components/Button";
 import githubIcon from "/public/images/githubIcon.png";
 import googleIcon from "/public/images/googleIcon.png";
 import loginImage from "/public/images/loginImage.png";
 import rocketIcon from "/public/images/rocketIcon.png";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const { signIn } = useSignIn();
+  const router = useRouter()
+
+  const signInWithGoogle = async () => {
+    await signIn?.authenticateWithRedirect({
+      strategy: "oauth_google",
+      redirectUrl: "/sso-callback",
+      redirectUrlComplete: "/",
+    });
+  };
+  const signInWithGithub = async () => {
+    await signIn?.authenticateWithRedirect({
+      strategy: "oauth_github",
+      redirectUrl: "/sso-callback",
+      redirectUrlComplete: "/",
+    });
+  };
+
+  const signInAsVisitor = () => {
+   router.push('/')
+  }
+
   return (
     <main className="bg-gray-800">
       <div className="flex gap-[12.875rem]">
@@ -22,13 +48,25 @@ export default function LoginPage() {
             </p>
           </div>
           <div className="flex w-full flex-col gap-4">
-            <Button icon={googleIcon} alt="Google icon">
+            <Button
+              onClick={signInWithGoogle}
+              icon={googleIcon}
+              alt="Google icon"
+            >
               Sign in with Google
             </Button>
-            <Button icon={githubIcon} alt="Github icon">
+            <Button
+              onClick={signInWithGithub}
+              icon={githubIcon}
+              alt="Github icon"
+            >
               Sign in with Github
             </Button>
-            <Button icon={rocketIcon} alt="Rocket icon">
+            <Button
+              onClick={signInAsVisitor}
+              icon={rocketIcon}
+              alt="Rocket icon"
+            >
               Sign in as a visitor
             </Button>
           </div>
