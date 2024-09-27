@@ -12,6 +12,7 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
+    "ngrok": "ngrok http http://localhost:3000",
     "start": "next start"
   },
   "dependencies": {
@@ -28,6 +29,7 @@
     "react-dom": "^18.3.1",
     "server-only": "^0.0.1",
     "superjson": "^2.2.1",
+    "svix": "^1.36.0",
     "zod": "^3.23.3"
   },
   "devDependencies": {
