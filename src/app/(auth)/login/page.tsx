@@ -2,7 +2,7 @@
 
 import { useSignIn } from "@clerk/nextjs";
 import Image from "next/image";
-import { Button } from "../../_components/Button";
+import { Button } from "../../_components/ui/Button";
 import githubIcon from "/public/images/githubIcon.png";
 import googleIcon from "/public/images/googleIcon.png";
 import loginImage from "/public/images/loginImage.png";
