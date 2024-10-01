@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { type Book } from "~/constants/books";
+import { type RatedBook } from "~/constants/ratedBooks";
 import Rating from "/public/images/rating.png";
 
-export function RatedBookPoster({ book }: { book: Book }) {
+export function RatedBookPoster({ book }: { book: RatedBook }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleExpand = () => {

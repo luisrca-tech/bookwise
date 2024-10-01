@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { books } from "~/constants/books";
+import { ratedBooks } from "~/constants/ratedBooks";
 import { HydrateClient } from "~/trpc/server";
 import { RatedBookPoster } from "../_components/block/RatedBookPoster";
 import startGreenIcon from "/public/images/startGreenIcon.png";
@@ -20,7 +20,7 @@ export default async function Home() {
         </div>
         <div className="flex flex-col gap-4">
           <h4 className="text-sm text-gray-100">Most recent reviews</h4>
-          {books.map((book) => (
+          {ratedBooks.map((book) => (
             <div key={book.title}>
               <RatedBookPoster book={book} />
             </div>

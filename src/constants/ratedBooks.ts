@@ -7,7 +7,7 @@ import cover1 from "/public/images/cover/1.png";
 import cover2 from "/public/images/cover/2.png";
 import cover3 from "/public/images/cover/3.png";
 
-export type Book = {
+export type RatedBook = {
   username: string;
   avatar: StaticImageData;
   publishedAt: string;
@@ -18,7 +18,7 @@ export type Book = {
   description: string;
 };
 
-export const books: Book[] = [
+export const ratedBooks: RatedBook[] = [
   {
     username: "Jaxson Dias",
     avatar: avatar1,
