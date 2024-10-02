@@ -21,7 +21,7 @@ export function Header() {
   }
 
   return (
-    <header className="m-5 flex max-h-screen w-[14.5rem] flex-col items-center justify-between overflow-hidden rounded-xl bg-gray-700 pb-6 pt-12">
+    <header className="m-5 flex max-h-screen min-w-[14.5rem] flex-col items-center justify-between overflow-hidden rounded-xl bg-gray-700 pb-6 pt-12">
       <div className="flex flex-col gap-16">
         <div className="flex gap-2">
           <Image src={bookwiseLogo} alt="Bookwise Logo" />
