@@ -3,6 +3,8 @@ import explorerImage from "/public/images/explorerGreenIcon.png";
 import searchIcon from "/public/images/searchIcon.png";
 import { books } from "~/constants/books";
 import { Book } from "~/app/_components/block/Book";
+import { Categories } from "~/constants/categories";
+import { Category } from "~/app/_components/block/Category";
 
 export default function ExplorerPage() {
   return (
@@ -25,6 +27,14 @@ export default function ExplorerPage() {
           />
           <Image src={searchIcon} alt="Search icon" className="absolute top-4 right-[0.875rem]" />
         </div>
+      </div>
+      <div className="flex items-center gap-3">
+      {Categories.map((category) => (
+        <div key={category.id}>
+        <Category category={category} />   
+        </div>
+      )
+      )}
       </div>
       <div className="grid grid-cols-3 gap-5 items-center">
       {books.map((book) => (
