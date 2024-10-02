@@ -6,12 +6,22 @@ import bookwiseLogo from "/public/images/bookwiseLogo.png";
 import exploreIcon from "/public/images/exploreIcon.png";
 import startIcon from "/public/images/startIcon.png";
 import profileIcon from "/public/images/profileIcon.png";
+import { useRouter } from "next/navigation";
 
 export function Header() {
+  const router = useRouter()
   const { user } = useUser()
 
+  const handleStartClick = () => {
+    router.push("/")
+  }
+
+  const handleExploreClick = () => {
+    router.push("/explorer")
+  }
+
   return (
-    <header className="m-5 flex max-h-screen w-[14.5rem] flex-col items-center justify-between overflow-hidden rounded-xl bg-gray-700 pb-6 pt-12">
+    <header className="m-5 flex max-h-screen min-w-[14.5rem] flex-col items-center justify-between overflow-hidden rounded-xl bg-gray-700 pb-6 pt-12">
       <div className="flex flex-col gap-16">
         <div className="flex gap-2">
           <Image src={bookwiseLogo} alt="Bookwise Logo" />
@@ -20,14 +30,20 @@ export function Header() {
           </h1>
         </div>
         <div className="flex flex-col gap-4 text-base text-gray-400">
-          <span className="flex gap-3 hover:text-gray-100">
+          <button
+            onClick={handleStartClick}
+            className="flex gap-3 hover:text-gray-100"
+          >
             <Image src={startIcon} alt="Start Icon" />
             Start
-          </span>
-          <span className="flex gap-3 hover:text-gray-100">
+          </button>
+          <button
+            onClick={handleExploreClick}
+            className="flex gap-3 hover:text-gray-100"
+          >
             <Image src={exploreIcon} alt="Explore Icon" />
             Explore
-          </span>
+          </button>
           <span className="flex gap-3 hover:text-gray-100">
             <Image src={profileIcon} alt="Explore Icon" />
             Profile

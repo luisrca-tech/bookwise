@@ -18,7 +18,7 @@ export function RatedBookPoster({ book }: { book: RatedBook }) {
         <div className="flex gap-4">
           <Image
             width={40}
-            height={40}
+            className="max-h-10"
             src={book.avatar}
             alt="User avatar image"
           />

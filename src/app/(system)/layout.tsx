@@ -26,9 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${nunito.variable}`}>
       <ClerkProvider>
-        <body className="bg-gray-800 flex gap-24">
+        <body className="bg-gray-800">
+          <div className="flex gap-24">
             <Header />
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+            <TRPCReactProvider>{children}</TRPCReactProvider>
+          </div>
         </body>
       </ClerkProvider>
     </html>
