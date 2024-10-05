@@ -1,4 +1,4 @@
-import { type Category } from "~/constants/categories";
+import { type Category } from "~/mocks/categories";
 
 export function Category({ category }: { category: Category }) {
   return (

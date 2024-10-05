@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { popularBooks } from "~/constants/popularBooks";
-import { ratedBooks } from "~/constants/ratedBooks";
+import { popularBooks } from "~/mocks/popularBooks";
+import { ratedBooks } from "~/mocks/ratedBooks";
 import { HydrateClient } from "~/trpc/server";
 import { PopularBookPoster } from "../_components/block/PopularBookPoster";
 import { RatedBookPoster } from "../_components/block/RatedBookPoster";

@@ -1,10 +1,10 @@
 import Image from "next/image";
+import { Book } from "~/app/_components/block/Book";
+import { Category } from "~/app/_components/block/Category";
+import { books } from "~/mocks/books";
+import { Categories } from "~/mocks/categories";
 import explorerImage from "/public/images/explorerGreenIcon.png";
 import searchIcon from "/public/images/searchIcon.png";
-import { books } from "~/constants/books";
-import { Book } from "~/app/_components/block/Book";
-import { Categories } from "~/constants/categories";
-import { Category } from "~/app/_components/block/Category";
 
 export default function ExplorerPage() {
   return (
@@ -25,24 +25,26 @@ export default function ExplorerPage() {
             placeholder="Search book or author"
             type="text"
           />
-          <Image src={searchIcon} alt="Search icon" className="absolute top-4 right-[0.875rem]" />
+          <Image
+            src={searchIcon}
+            alt="Search icon"
+            className="absolute right-[0.875rem] top-4"
+          />
         </div>
       </div>
       <div className="flex items-center gap-3">
-      {Categories.map((category) => (
-        <div key={category.id}>
-        <Category category={category} />   
-        </div>
-      )
-      )}
+        {Categories.map((category) => (
+          <div key={category.id}>
+            <Category category={category} />
+          </div>
+        ))}
       </div>
-      <div className="grid grid-cols-3 gap-5 items-center">
-      {books.map((book) => (
-        <div key={book.title}>
-        <Book book={book} />  
-        </div>
-      )
-      )}
+      <div className="grid grid-cols-3 items-center gap-5">
+        {books.map((book) => (
+          <div key={book.title}>
+            <Book book={book} />
+          </div>
+        ))}
       </div>
     </main>
   );

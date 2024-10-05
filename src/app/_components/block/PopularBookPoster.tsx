@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { type PopularBook } from "~/constants/popularBooks";
+import { type PopularBook } from "~/mocks/popularBooks";
 import Rating from "/public/images/rating.png";
 
 export function PopularBookPoster({ book }: { book: PopularBook }) {
   return (
-    <div className="flex min-h-[8.125rem] w-full flex-col bg-gray-700 px-5 py-4 rounded-lg">
+    <div className="flex min-h-[8.125rem] w-full flex-col rounded-lg bg-gray-700 px-5 py-4">
       <div className="flex gap-5">
         <Image
           width={64}

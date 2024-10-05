@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { type RatedBook } from "~/constants/ratedBooks";
+import { type RatedBook } from "~/mocks/ratedBooks";
 import Rating from "/public/images/rating.png";
 
 export function RatedBookPoster({ book }: { book: RatedBook }) {

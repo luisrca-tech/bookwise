@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { type Book } from "~/constants/books";
+import { type Book } from "~/mocks/books";
 import Rating from "/public/images/rating.png";
 
 export function Book({ book }: { book: Book }) {
