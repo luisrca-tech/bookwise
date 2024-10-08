@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   --white: 255 255 255;
   --black: 0 0 0;
+  --muted: 0 0% 96.1%;
 
   --green-100: 80 178 192;
   --green-200: 37 93 106;

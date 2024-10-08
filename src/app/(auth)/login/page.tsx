@@ -2,16 +2,16 @@
 
 import { useSignIn } from "@clerk/nextjs";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Button } from "../../_components/ui/Button";
 import githubIcon from "/public/images/githubIcon.png";
 import googleIcon from "/public/images/googleIcon.png";
 import loginImage from "/public/images/loginImage.png";
 import rocketIcon from "/public/images/rocketIcon.png";
-import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const { signIn } = useSignIn();
-  const router = useRouter()
+  const router = useRouter();
 
   const signInWithGoogle = async () => {
     await signIn?.authenticateWithRedirect({
@@ -29,8 +29,8 @@ export default function LoginPage() {
   };
 
   const signInAsVisitor = () => {
-   router.push('/')
-  }
+    router.push("/");
+  };
 
   return (
     <main className="bg-gray-800">

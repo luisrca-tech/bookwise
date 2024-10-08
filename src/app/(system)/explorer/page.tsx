@@ -1,12 +1,17 @@
+"use client";
+
 import Image from "next/image";
 import { Book } from "~/app/_components/block/Book";
+import { BookSkeleton } from "~/app/_components/block/BookSkeleton";
 import { Category } from "~/app/_components/block/Category";
-import { books } from "~/mocks/books";
 import { Categories } from "~/mocks/categories";
+import { api } from "~/trpc/react";
 import explorerImage from "/public/images/explorerGreenIcon.png";
 import searchIcon from "/public/images/searchIcon.png";
 
 export default function ExplorerPage() {
+  const books = api.books.getAll.useQuery();
+
   return (
     <main className="flex w-full flex-col gap-12 pb-12 pr-24 pt-[4.5rem]">
       <div className="flex items-center justify-between">
@@ -40,11 +45,17 @@ export default function ExplorerPage() {
         ))}
       </div>
       <div className="grid grid-cols-3 items-center gap-5">
-        {books.map((book) => (
-          <div key={book.title}>
-            <Book book={book} />
-          </div>
-        ))}
+        {books.isLoading
+          ? Array.from({ length: 15 }).map((_, index) => (
+              <div key={index}>
+                <BookSkeleton />
+              </div>
+            ))
+          : books.data?.map((book) => (
+              <div key={book.id}>
+                <Book book={book} />
+              </div>
+            ))}
       </div>
     </main>
   );

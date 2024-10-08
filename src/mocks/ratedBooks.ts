@@ -3,9 +3,9 @@ import avatar1 from "/public/images/avatar/1.png";
 import avatar2 from "/public/images/avatar/2.png";
 import avatar3 from "/public/images/avatar/3.png";
 
-import cover1 from "/public/images/cover/1.png";
-import cover2 from "/public/images/cover/2.png";
-import cover3 from "/public/images/cover/3.png";
+import cover1 from "/public/images/books/viagem-ao-centro-da-terra.png";
+import cover2 from "/public/images/books/arquitetura-limpa.png";
+import cover3 from "/public/images/books/fragmentos-do-horror.png";
 
 export type RatedBook = {
   username: string;

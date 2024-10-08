@@ -1,9 +1,9 @@
 import { type RatedBook } from "./ratedBooks";
 
-import cover1 from "/public/images/cover/4.png";
-import cover2 from "/public/images/cover/5.png";
-import cover3 from "/public/images/cover/6.png";
-import cover4 from "/public/images/cover/3.png";
+import cover1 from "/public/images/books/arquitetura-limpa.png";
+import cover2 from "/public/images/books/fragmentos-do-horror.png";
+import cover3 from "/public/images/books/o-guia-do-mochileiro-das-galáxias.png";
+import cover4 from "/public/images/books/o-hobbit.png";
 
 export type PopularBook = Pick<
   RatedBook,
